@@ -65,8 +65,6 @@ router.get('/:id', (req, res) => {
   })
 });
 
-// START WORK HERE
-
 // create new product
 router.post('/', (req, res) => {
   /* req.body should look like this...
@@ -149,10 +147,6 @@ router.delete('/:id', (req, res) => {
     }
   })
   .then(dbProductData => {
-    if (!dbProductData[0]) {
-      res.status(404).json({ message: 'No product found with this id' });
-        return;
-      }
       res.json(dbProductData);
     })
     .catch(err => {
